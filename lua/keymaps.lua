@@ -85,4 +85,4 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 
 -- tags
 -- keymap('n',"<leader>gb","<cmd>pop<cr>",opts)
-nmap("<leader>gb","<cmd>pop<cr>","[G]o [B]ack")
+nmap("gb","<cmd>pop<cr>","[G]o [B]ack")

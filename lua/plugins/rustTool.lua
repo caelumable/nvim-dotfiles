@@ -57,7 +57,6 @@ vim.g.rustaceanvim = {
         parameterHints = {
           enable = true,
         }
-        
       },
     },
   },
@@ -76,7 +75,9 @@ end
 
 local function SetUp()
   local bufnr = vim.api.nvim_get_current_buf()
-  vim.keymap.set(
+
+  --it is better to use lspsaga's code action
+  --[[ vim.keymap.set(
     "n",
     "<leader>a",
     function()
@@ -84,7 +85,7 @@ local function SetUp()
       -- or vim.lsp.buf.codeAction() if you don't want grouping.
     end,
     { silent = true, buffer = bufnr }
-  )
+  ) ]]
 
   --[[ vim.keymap.set(
     "n",
@@ -101,15 +102,15 @@ local function SetUp()
   ) ]]
 
   nmap(
-    "se",
-    "<cmd>RustLsp renderDiagnostic<cr>",
-    "[S]how [E]rror"
-  )
-
-  nmap(
     "<leader>si",
     "<cmd>RustLsp view mir<cr>",
     "[S]how [I]nplementation"
+  )
+
+  nmap(
+    "<leader>od",
+    "<cmd>RustLsp openDocs<cr>",
+    "[O]pen [D]ocs"
   )
 
 end

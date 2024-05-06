@@ -12,6 +12,9 @@ local function keymap()
   nmap('<leader>da',require('telescope.builtin').diagnostics,'[D]i[A]gnostics')
   nmap('<leader>p','<cmd>Lspsaga peek_definition<cr>','[P]eek')
   nmap('<leader>gr',require('telescope.builtin').lsp_references,'[G]o[R]eference')
+  nmap("se","<cmd>Lspsaga show_line_diagnostics<cr>","[S]how [E]rror")
+  nmap("gd","<cmd>Lspsaga goto_definition<cr>","[G]oto [D]efinition")
+
 end
 
 return {
