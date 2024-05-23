@@ -14,6 +14,8 @@ local servers = {
     "lua_ls",
     -- "rust_analyzer",
     "cmake",
+    -- "golangci_lint_ls",
+    "gopls",
   }
 
 local masonSettings = {

@@ -18,6 +18,7 @@ local function setup()
   })
 
   require('telescope').load_extension('fzf')
+  require('telescope').load_extension("live_grep_args")
 
   local builtin = require('telescope.builtin')
 
@@ -33,13 +34,18 @@ local function setup()
   nmap('<leader>fh', builtin.help_tags, "[F]ind [H]elp")
   -- vim.keymap.set('n', '<leader>o', builtin.oldfiles, {})
   nmap('<leader>of', builtin.oldfiles, "[O]ld [F]iles")
+  -- nmap('<leader>/', builtin.live_grep, "[/]grep")
+
+  nmap("<leader>/",":lua require('telescope').extensions.live_grep_args.live_grep_args(require('telescope.themes').get_dropdown({}))<CR>","[/]live grep")
+
   --[[ vim.keymap.set('n', '<leader>/', function()
     require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown{
       winblend = 10,
       previewer = false,
     })
   end, {}) ]]
-  nmap('<leader>/', function()
+
+  --[[ nmap('<leader>/', function()
     require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown{
       -- winblend set the transparent of the window
       winblend = 0,
@@ -47,7 +53,7 @@ local function setup()
     })
   end,
   "[/]fuzzy find")
-
+ ]]
 end
 
 return {
@@ -60,7 +66,13 @@ return {
       },
       dependencies = {
         'nvim-lua/plenary.nvim',
-        {"nvim-telescope/telescope-fzf-native.nvim",build='make'}
+        {"nvim-telescope/telescope-fzf-native.nvim",build='make'},
+        {
+          "nvim-telescope/telescope-live-grep-args.nvim",
+          -- This will not install any breaking changes.
+          -- For major updates, this must be adjusted manually.
+          version = "^1.0.0",
+        },
       },
       config = function()
         setup()

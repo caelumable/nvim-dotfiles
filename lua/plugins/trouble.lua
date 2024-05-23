@@ -61,7 +61,7 @@ return {
    opts = {},
     -- trouble_opt,
    config = function ()
-     vim.keymap.set("n","<leader>t","<cmd>Trouble<cr>",{desc="Trouble",})
+     vim.keymap.set("n","<leader>tr","<cmd>Trouble<cr>",{desc="Trouble",})
      require("trouble").setup()
    end
 }
