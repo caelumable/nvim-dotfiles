@@ -1,8 +1,5 @@
 return {
-  {
-      'jiangmiao/auto-pairs',
-      -- lazy = true,
-      -- event = "BufReadPre",
-      event = "VeryLazy",
-  }
+  "windwp/nvim-autopairs",
+  event = "InsertEnter",
+  opts = {},
 }

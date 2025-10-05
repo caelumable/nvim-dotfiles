@@ -1,7 +1,4 @@
 -- side bar
---
-
-
 return {
   {
     'nvim-lualine/lualine.nvim',
