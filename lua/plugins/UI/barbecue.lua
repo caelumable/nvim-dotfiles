@@ -1,4 +1,4 @@
---设置buffer上面的路径
+-- --设置buffer上面的路径
 return {
   {
     "utilyre/barbecue.nvim",

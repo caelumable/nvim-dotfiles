@@ -35,55 +35,27 @@ return {
         event = 'VeryLazy',
         config = true,
     },
-    -- {
-    --     "folke/which-key.nvim",
-    --     event = 'VeryLazy',
-        
-    --     config = true,
-    -- },
-
-    {
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      ---@type false | "classic" | "modern" | "helix"
-      preset = "helix",
-      win = {
-        -- no_overlap = true,
-        title = false,
-        width = 0.5,
-      },
-      -- stylua: ignore
-      spec = {
-        { "<leader>cc", group = "<CodeCompanion>", icon = "" },
-        { "<leader>s",  group = "<Snacks>"                    },
-        { "<leader>t",  group = "<Snacks> Toggle"             },
-      },
-      -- expand all nodes wighout a description
-      expand = function(node)
-        return not node.desc
-      end,
-    },
-    keys = {
-      -- stylua: ignore
-      { "<leader>?", function() require("which-key").show({ global = false }) end, desc = "[Which-key] Buffer Local Keymaps", },
-    },
-  },
-
     {
         'echasnovski/mini.ai',
         event = 'VeryLazy',
         config = true,
     },
+    -- heilight todo comments
+    -- TODO: heilight
     {
-        "echasnovski/mini.comment",
-        event = 'VeryLazy',
-        config = true,
+      "folke/todo-comments.nvim",
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "folke/snacks.nvim",
+      },
+      event = "VeryLazy",
+      -- stylua: ignore
+      keys = {
+        ---@diagnostic disable-next-line: undefined-field
+        { "<leader>st", function() require("snacks").picker.todo_comments({ keywords = { "TODO", "FIX", "FIXME", "BUG", "FIXIT", "HACK", "WARN", "ISSUE"  } }) end, desc = "[TODO] Pick todos (without NOTE)", },
+        ---@diagnostic disable-next-line: undefined-field
+        { "<leader>sT", function() require("snacks").picker.todo_comments() end, desc = "[TODO] Pick todos (with NOTE)", },
+      },
+      config = true,
     },
-    {
-        "lewis6991/gitsigns.nvim",
-        event = 'VeryLazy',
-        config = true,
-    },
-  }
+}

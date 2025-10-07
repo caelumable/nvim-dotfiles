@@ -12,7 +12,6 @@ local function setKeymap()
       require('dap.ui.widgets').hover()
     end)
     vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
-      -- require('dap.ui.widgets').preview()
       require('dapui').eval()
     end)
     vim.keymap.set('n', '<Leader>df', function()
@@ -27,18 +26,69 @@ end
 
 local function Setup()
 
-  -- dap-ui must init before dap configuration 
   require("plugins.Dap.config.dap-ui")
-
   require("plugins.Dap.config.dap-cpp")
   require("plugins.Dap.config.dap-python")
 
-  require("nvim-dap-virtual-text").setup({})
-  local status_ok,dap = pcall(require,"dap")
-  if not status_ok then
-    print("there is something wrong with dap")
-    return
-  end
+
+--   local status_ok,dap = pcall(require,"dap")
+--    if not status_ok then
+--       print("there is something wrong with dap")
+--       return
+--   end
+
+
+--   dap.adapters.python ={
+--   type = "executable",
+--   command = "/usr/bin/python3",
+--   args = {"-m","debugpy.adapter"},
+-- }
+
+-- dap.configurations.python = {
+--   {
+--     type="python",
+--     request = "launch",
+--     name = "debug file",
+--     program = "${file}",
+--     console = "integratedTerminal",
+--     -- terminal = 'integrated',
+--     -- console = "internalConsole",
+--   },
+-- }
+
+
+
+-- 		local dapstatus_ok,dapui = pcall(require,"dapui")
+--   if not dapstatus_ok then
+--     print("there is something wrong with dapui")
+--     return
+--   end
+
+--   require("dapui").setup()
+
+--   dap.listeners.before.attach.dapui_config = function()
+--     dapui.open()
+--   end
+--   dap.listeners.before.launch.dapui_config = function()
+--     dapui.open()
+--   end
+--   dap.listeners.before.event_terminated.dapui_config = function()
+--     dapui.close()
+--   end
+--   dap.listeners.before.event_exited.dapui_config = function()
+--     dapui.close()
+--   end
+
+
+
+  -- require("plugins.Dap.config.dap-virtual-text")
+
+  -- require("nvim-dap-virtual-text").setup({})
+  -- local status_ok,dap = pcall(require,"dap")
+  -- if not status_ok then
+  --   print("there is something wrong with dap")
+  --   return
+  -- end
 
   -- local dapstatus_ok,dapui = pcall(require,"dapui")
   -- if not dapstatus_ok then
@@ -47,6 +97,7 @@ local function Setup()
   -- end
 
   -- require("dapui").setup()
+
 
   -- dap.listeners.before.attach.dapui_config = function()
   --   dapui.open()
@@ -67,10 +118,10 @@ return {
   {
     'mfussenegger/nvim-dap',
      dependencies = {
-      'nvim-treesitter/nvim-treesitter',
+      -- 'nvim-treesitter/nvim-treesitter',
       'theHamsta/nvim-dap-virtual-text',
       -- "rcarriga/nvim-dap-ui"
-      { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} }
+      { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
     },
     lazy = false,
     init = function()

@@ -29,6 +29,7 @@ return {
       { "windwp/nvim-ts-autotag", config = true },
     },
     build = ":TSUpdate",
+    -- lazy = false,
     event = "BufReadPost",
     opts = {
       sync_install = false,
@@ -47,6 +48,7 @@ return {
         "toml",
         "vim",
         "vue",
+        "rust",
       },
       highlight = {
         enable = true,
@@ -69,6 +71,7 @@ return {
         select = {
           enable = true,
           lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+          -- in visiual mode
           keymaps = {
             -- You can use the capture groups defined in textobjects.scm
             ["aa"] = "@parameter.outer",
@@ -145,4 +148,3 @@ return {
     end,
   },
 }
-

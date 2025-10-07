@@ -29,12 +29,15 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   spec = {
-    {import = 'plugins'},
-    {import = 'plugins.lsp'},
     {import = 'plugins.Dap'},
+    {import = 'plugins.UI'},
+    {import = 'plugins.Edit'},
+    {import = 'plugins.Completion'},
+    {import = 'plugins.Search'},
   },
   defaults = {lazy = true,version=nil},
-  install = {missing = true,colorscheme = {'tokyonight-moon'}},
+  install = {missing = true,colorscheme = {'habamax'}},
+  -- install = { colorscheme = { "habamax" } },
   ui = {border = 'rounded'}
 })
 

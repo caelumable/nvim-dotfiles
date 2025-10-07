@@ -54,7 +54,7 @@ keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
 --keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 
 -- Insert --
--- Press jk fast to exit insert mode 
+-- Press jk fast to exit insert mode
 keymap("i", "jk", "<ESC>", opts)
 -- keymap("i", "kj", "<ESC>", opts)
 
@@ -92,3 +92,7 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 -- tags
 -- keymap('n',"<leader>gb","<cmd>pop<cr>",opts)
 nmap("gb","<cmd>pop<cr>","[G]o [B]ack")
+
+
+--copy
+nmap("<c-s>","<cmd>w<cr>","[S]ave")

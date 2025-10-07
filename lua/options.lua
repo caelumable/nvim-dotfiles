@@ -47,6 +47,10 @@ end
 
 vim.b.fileencoding = 'utf-8'
 
+-- although it may influence dap-ui plugins
+-- we want codecompanion to open on the right side
+vim.opt.splitright = true                       -- force all vertial splits to go right current window
+
 -- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
 vim.opt.shortmess:append "c"                           -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append "-"                           -- hyphenated words recognized by searches
