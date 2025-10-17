@@ -61,6 +61,9 @@ dashboard.section.header.val = {
 end
 
 
+-- return {}
+
+
 -- -- 创建自动命令组便于管理（避免重复创建自动命令）
 -- local neotree_group = vim.api.nvim_create_augroup('NeoTreeWindowEvents', { clear = true })
 
@@ -132,15 +135,16 @@ end
 --   end,
 -- })
 
-return {
-    {
-        'goolord/alpha-nvim',
-        -- event = "VeryLazy",
-        -- lazy = false,
-        event = "VimEnter",
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function ()
-	        startup()
-        end,
-    }
-}
+-- return {
+--     {
+--         'goolord/alpha-nvim',
+--         -- event = "VeryLazy",
+--         -- lazy = false,
+--         event = "VimEnter",
+--         dependencies = { 'nvim-tree/nvim-web-devicons' },
+--         config = function ()
+-- 	        startup()
+--         end,
+--     }
+-- }
+return {}
