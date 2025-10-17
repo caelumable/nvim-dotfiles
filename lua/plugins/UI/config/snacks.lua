@@ -35,7 +35,7 @@ local lopts = {
         { icon = ' ', key = 'e', desc = 'New file', action = ':enew' },
         { icon = ' ', key = 'o', desc = 'Recent files', action = ':lua Snacks.picker.recent()' },
         { icon = '󱎸 ', key = 't', desc = 'Find text', action = ':lua Snacks.picker.grep()', enabled = package.loaded.lazy ~= nil },
-        { icon = ' ', key = 'c', desc = 'Configuration', action = ':e $MYVIMRC<CR>', enabled = package.loaded.lazy ~= nil },
+        { icon = ' ', key = 'c', desc = 'Configuration', action = ':e $MYVIMRC', enabled = package.loaded.lazy ~= nil },
         { icon = ' ', key = 'p', desc = 'Find Project', action = ':lua Snacks.picker.projects()', enabled = package.loaded.lazy ~= nil },
         { icon = ' ', key = 'q', desc = 'Quit', action = ':qa' },
       },
